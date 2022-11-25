@@ -1,14 +1,22 @@
 import { createStore } from 'vuex'
 
-export default createStore({
+// new Vuex.store({}) 2.0版本创建仓库
+// createStore({})    3.0版本创建仓库
+
+const moduleA = {
   state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+    username: 'moduleA'
+  }
+}
+const moduleB = {
+  namespaced: true,
+  state: {
+    username: 'moduleB'
+  }
+}
+export default createStore({
   modules: {
+    moduleA,
+    moduleB
   }
 })
